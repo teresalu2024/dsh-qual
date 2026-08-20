@@ -14,14 +14,19 @@
 
 ## 2. 安装步骤
 
-1. 打开 DSH，确保它在运行。
-2. 在终端执行：
+这个技能包是纯文本文件，DSH 会自动发现它，只需放到技能目录：
+
+1. 打开终端，执行下面**任一**命令：
    ```bash
-   dsh plugin --profile <profile> add github.com/teresalu2024/dsh-qual
+   # 方式一：克隆整个仓库（推荐）
+   git clone https://github.com/teresalu2024/dsh-qual ~/.dsh/skills/dsh-qual
+
+   # 方式二：只下载 SKILL.md 一个文件
+   mkdir -p ~/.dsh/skills/dsh-qual
+   curl -o ~/.dsh/skills/dsh-qual/SKILL.md https://raw.githubusercontent.com/teresalu2024/dsh-qual/master/SKILL.md
    ```
-   （把 `<profile>` 换成你自己正在用的 profile 名，比如 `default`。）
-3. **重启装了本插件的实例**（插件只在实例启动时加载，不重启不生效）。
-4. 装好应该看到：插件列表里出现了 `dsh-qual`，启动日志里有它的名字。
+2. **重启 DSH 实例**（技能在实例启动时加载）。
+3. 装好应该看到：对 DSH 说一句"我要做质性研究"，它会调用 `dsh-qual` 技能分阶段带你走。
 
 ---
 

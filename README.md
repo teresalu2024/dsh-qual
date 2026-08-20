@@ -10,11 +10,18 @@ DSH 生态里的技能包多为通用框架，缺少**成体系的质性研究�
 
 ## 安装
 
+DSH 通过文件系统自动发现技能包，把本仓库放到技能目录即可（无需构建、无需 pnpm）：
+
 ```bash
-dsh plugin --profile <profile> add github.com/teresalu2024/dsh-qual
+# 方式一：克隆到用户技能目录（推荐）
+git clone https://github.com/teresalu2024/dsh-qual ~/.dsh/skills/dsh-qual
+
+# 方式二：只下载 SKILL.md 一个文件
+mkdir -p ~/.dsh/skills/dsh-qual
+curl -o ~/.dsh/skills/dsh-qual/SKILL.md https://raw.githubusercontent.com/teresalu2024/dsh-qual/master/SKILL.md
 ```
 
-> 把 `<profile>` 换成你自己的 profile 名。
+> 放到技能目录后，重启装了本技能的 DSH 实例（技能在实例启动时加载）。
 
 ## 功能清单
 
